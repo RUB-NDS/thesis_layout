@@ -1,0 +1,47 @@
+% Hintergrund-Makro
+\newcommand\BackgroundPic{
+\put(0,0){
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight]{images/front.png}%
+\vfill
+}}}
+
+\AddToShipoutPicture*{\BackgroundPic}
+\begin{titlepage}
+\makeatletter
+
+\enlargethispage{3cm}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node[shift={(10cm,-23.5cm)},opacity=1] {\includegraphics[scale=0.625]{images/hgi_nds_2.pdf}};
+\end{tikzpicture}
+ 
+ \vspace*{10cm}
+\begin{minipage}[b]{1\linewidth}
+	\sffamily
+	\hspace{-17.2mm}\includegraphics[scale=1.0]{images/rub_slogan}\\
+  
+	\textbf{\LARGE {\@title}}\\
+  
+	\Large{\@author}\\
+	
+% 	\vspace*{35mm}
+	\vspace{4cm}
+	\normalsize{
+	Master's Thesis\@~~--~~\@date\@.\\
+	Chair for Network and Data Security.\\}
+	\newline
+	\normalsize{
+	\begin{tabular}{@{}ll@{}}
+	Supervisor: & Prof.~Dr.~J\"{o}rg~Schwenk\\
+	Advisor: & Dipl.-Ing.~Max Mustermann\\
+	\end{tabular}
+	}
+\end{minipage}
+
+
+\makeatother
+\end{titlepage}
+\ClearShipoutPicture

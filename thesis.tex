@@ -1,0 +1,89 @@
+%%% TEMPLATE-INFO
+%% AUTHOR		: johannes.hoffmann@rub.de (former: vincent.immler@rub.de)
+%% VERSION		: 0.03
+%% Please send comments and feedback (and donations ;-)) to author, thanks!
+
+%%% DOCUMENT-INFO
+%% VERSION		: 0.1
+
+\RequirePackage{fix-cm,cmap}
+
+\documentclass[
+fontsize=11pt,
+paper=a4,
+abstract=true,
+numbers=noenddot,
+listof=totoc,
+bibliography=totoc,
+twoside,
+open=right,
+cleardoublepage=plain,
+parskip=half+, % comment this out if you do not want an empty half line between paragraphs, but please read the KomaScript Guide and search for parskip (around page 82): ftp://ftp.dante.de/pub/tex/macros/latex/contrib/koma-script/scrguide.pdf
+BCOR=1cm, % Bindekorrektur: Change this accordingly, also read the KomaScript Guide! Make sure you read the guide.
+]{scrreprt}
+
+\input{misc/preamble}
+\input{misc/acronyms.tex}
+
+%% here your document starts
+\begin{document}
+
+%% switch to roman paginating for the acknowledgements, table of contents etc.
+\pagenumbering{roman} % uncomment this if you like it
+
+%% title page --- made out of expressions defined above
+\input{frontpage}
+
+\input{chapters/chap_0}
+
+\pagenumbering{arabic} %switches to arabic numbers for the rest of the text
+\setcounter{page}{1}
+
+%%
+%% include all your chapters as .tex files,
+%% each file contains sections \section{name of section},
+%% subsections \subsections{...} and so on...
+%%
+
+\input{chapters/chap_1}
+
+\input{chapters/chap_2}
+
+\input{chapters/chap_3}
+
+\input{chapters/chap_4}
+
+\input{chapters/chap_5}
+
+%% include appendix
+
+\appendix
+
+\pagestyle{scrplain} % turn off headers and footers
+%% generate list of figures, optional, remove it if you do not like it
+\listoffigures
+
+\KOMAoptions{open=any} % Plaziert Kapitel auch auf linken Seiten
+
+%% generate list of tables, optional, remove it if you do not like it
+\listoftables
+
+%% generate list of algorithms, optional, remove it if you do not like it
+\clearpage \phantomsection 
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\listofalgorithmes
+
+%% generate list of listings, optional, remove it if you do not like it
+\renewcommand*{\lstlistlistingname}{List of Listings}
+\lstlistoflistings
+
+%% generate bibliography with bibtex, the bibfile here is "paper.bib"
+\flushbottom
+\bibliographystyle{plainnat}
+\bibliography{literature/literature}
+
+\KOMAoptions{open=right} % Plaziert Kapitel wieder nur auf rechten Seiten
+
+\input{chapters/chap_appendix}
+
+\end{document} 

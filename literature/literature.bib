@@ -1,5 +1,3 @@
-\usepackage{url}
-
 @string{ieee-oakland    = "IEEE Symposium on Security and Privacy"}
 @string{acm-ccs         = "ACM Conference on Computer and Communications Security (CCS)"}
 @string{isoc-ndss       = "Symposium on Network and Distributed System Security (NDSS)"}
@@ -24,6 +22,7 @@
 % manual		{title, address}[author, organization, edition, month, year, note]
 % misc			{}[author, title, howpublished, month, year, note]
 % techreport	{author, title, institution, year}[type, note, number, address, month]
+% As of now you can use the url and urldate on every type to ease the inclusion of urls
 
 @article{Xie:2008:SBS,
  author = {Y. Xie and F. Yu and K. Achan and R. Panigrahy and G. Hulten and I. Osipkov},
@@ -45,6 +44,7 @@
 @misc{msc:correctuse,
   	author={{Rohde \& Schwarz}},
   	title={{D}er korrekte {U}mgang mit {G}r\"{o}\ss{}en,\ {E}inheiten und {G}leichungen},
-  	note={\url{http://www.rohde-schwarz.de/ps/rus/tools/show_8437_document/Der_korrekte_Umgang.pdf}, as of \today}
+  	url={http://www.rohde-schwarz.de/ps/rus/tools/show_8437_document/Der_korrekte_Umgang.pdf},
+  	urldate={\today}
 }
 

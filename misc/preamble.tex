@@ -57,7 +57,6 @@
 
 % Glossary
 \usepackage[nonumberlist, acronym, toc]{glossaries}
-\makeglossaries
 
 % Enable quotes by \enquote{}
 \usepackage[babel,english=american, german=quotes]{csquotes}
@@ -121,10 +120,8 @@
 \newtheorem{algorithm}[theorem]{Algorithm}
 \newenvironment{example}{\begin{quote}{\bf Example:}}{\end{quote}}
 
-% BIBTEX, http://merkel.zoneo.net/Latex/natbib.php
-% if you uncomment this block, you'll get an english bibliography with alphanumerical references
-%\usepackage{bibgerm} % u. a. statt et al
-\usepackage[square,numbers]{natbib} % eckige klammern, natbib-package
+% BIBTEX, http://mirrors.ctan.org/biblio/bibtex/contrib/babelbib/babelbib.pdf
+\usepackage{babelbib}
 % \setbibpreamble{{\large Seitenzahlen, auf denen ein Eintrag referenziert wird, werden am Ende eines jeden Eintrags angegeben.}\newline} % Wegen der pagebackref-Option des hyperref-Packets, wird vielen nicht direkt klar was das soll http://projekte.dante.de/DanteFAQ/Verzeichnisse#16
 
 % gray definition boxes, that whay you'll find them in the text

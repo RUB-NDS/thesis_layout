@@ -2,7 +2,6 @@
 \setcounter{secnumdepth}{3} % Nummerierung bis Subsubsection
 
 % General stuff
-\usepackage{fixltx2e}
 \usepackage[utf8]{inputenc} % CHANGE HERE IF NECESSARY
 \usepackage[T1]{fontenc}
 \usepackage[ngerman, english]{babel} % last language given is used (here: english)
@@ -10,12 +9,6 @@
 %\usepackage{microtype}
 \usepackage{ifpdf}
 \usepackage{ifthen}
-
-%%%%%% MACROS %%%%%%
-\usepackage{xspace} % Nur dann ein Leerzeichen, wenn das nächste Zeichen kein Satzzeichen ist.
-\newcommand{\SecII}{Sec\textsuperscript{2}\xspace}
-\newcommand{\SAML}{\acr{SAML}\xspace}
-\newcommand{\XML}{\acr{XML}\xspace}
 
 % Set date here 
 %\day=6 \month=6 \year=2012
@@ -122,6 +115,9 @@
 
 % BIBTEX, http://mirrors.ctan.org/biblio/bibtex/contrib/babelbib/babelbib.pdf
 \usepackage{babelbib}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+
 % \setbibpreamble{{\large Seitenzahlen, auf denen ein Eintrag referenziert wird, werden am Ende eines jeden Eintrags angegeben.}\newline} % Wegen der pagebackref-Option des hyperref-Packets, wird vielen nicht direkt klar was das soll http://projekte.dante.de/DanteFAQ/Verzeichnisse#16
 
 % gray definition boxes, that whay you'll find them in the text

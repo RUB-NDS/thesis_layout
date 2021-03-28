@@ -1,6 +1,6 @@
 # This workflow will run a docker image with a full TeXLive environment installed and compile the thesis to look for errors
 
-name: CI
+name: Document Build
 
 # Controls when the action will run. 
 on:

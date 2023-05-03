@@ -1,0 +1,42 @@
+{
+  "name": "LaTeX",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "telemetry.enableTelemetry": false,
+        "files.trimTrailingWhitespace": true,
+        "latex-workshop.view.pdf.viewer": "tab",
+        "latex-workshop.synctex.afterBuild.enabled": true,
+        "latex-workshop.view.pdf.trim": 1,
+        "ltex.language": "en-US",
+        "ltex.latex.commands": {
+          "\\lstinput{}": "ignore",
+          "\\lstinline||": "ignore",
+          "\\lstinline{}": "ignore"
+        },
+        "ltex.dictionary": {
+          "de-DE": [
+            "Configuration",
+            "Protocol"
+          ]
+        }
+      },
+      "extensions": [
+        // LaTeX
+        "james-yu.latex-workshop",
+        "tecosaur.latex-utilities",
+        // Language
+        "valentjn.vscode-ltex",
+        // TODOs
+        "Gruntfuggly.todo-tree"
+      ]
+    }
+  },
+  "forwardPorts": [ 35555 ],
+  "containerUser": "vscode",
+  // Fix for SELinux (Fedora), Podman, ...
+  "remoteUser": "vscode",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,Z",
+	"runArgs": ["--userns=keep-id"]
+}

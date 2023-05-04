@@ -271,3 +271,11 @@ TSWLatexianTemp*
 
 # Makeindex log files
 *.lpz
+
+# Further tmp files
+*.bbl
+*.fdb_latexmk
+*.fls
+*.log
+*.tex
+*.aux

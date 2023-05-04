@@ -20,7 +20,23 @@
             "Configuration",
             "Protocol"
           ]
-        }
+        },
+        "latex-workshop.latex.tools": [
+          {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+              "-shell-escape",
+              "-synctex=1",
+              "-interaction=nonstopmode",
+              "-file-line-error",
+              "-pdf",
+              "-outdir=%OUTDIR%",
+              "%DOC%"
+            ],
+            "env": {}
+          }
+        ]
       },
       "extensions": [
         // LaTeX
@@ -33,10 +49,14 @@
       ]
     }
   },
-  "forwardPorts": [ 35555 ],
+  "forwardPorts": [
+    35555
+  ],
   "containerUser": "vscode",
   // Fix for SELinux (Fedora), Podman, ...
-  "remoteUser": "vscode",
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,Z",
-	"runArgs": ["--userns=keep-id"]
+  // "remoteUser": "vscode",
+  // "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,Z",
+  // "runArgs": [
+  //   "--userns=keep-id"
+  // ]
 }

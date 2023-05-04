@@ -1,10 +1,5 @@
 %%% TEMPLATE-INFO
-%% AUTHOR		: johannes.hoffmann@rub.de (former: vincent.immler@rub.de)
-%% VERSION		: 0.03
-%% Please send comments and feedback (and donations ;-)) to author, thanks!
-
-%%% DOCUMENT-INFO
-%% VERSION		: 0.1
+%% VERSION		: 0.11
 
 \RequirePackage{fix-cm,cmap}
 
@@ -71,16 +66,10 @@ BCOR=1cm, % Bindekorrektur: Change this accordingly, also read the KomaScript Gu
 %% generate list of algorithms, optional, remove it if you do not like it
 \clearpage \phantomsection
 \addcontentsline{toc}{chapter}{List of Algorithms}
-\listofalgorithmes
-
-%% generate list of listings, optional, remove it if you do not like it
-\renewcommand*{\lstlistlistingname}{List of Listings}
-\lstlistoflistings
 
 %% generate bibliography with bibtex, the bibfile here is "paper.bib"
 \flushbottom
-\bibliographystyle{bababbrv-fl}
-\bibliography{literature/literature}
+\printbibliography
 
 \KOMAoptions{open=right} % Plaziert Kapitel wieder nur auf rechten Seiten
 

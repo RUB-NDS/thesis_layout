@@ -6,17 +6,21 @@
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel} % last language given is used (here: english. Alternative: ngerman)
 \usepackage{lmodern}
-%\usepackage{microtype}
-\usepackage{ifpdf}
-\usepackage{ifthen}
+
+\usepackage{tikz} % used on frontpage
+
 
 % Set date here
-%\day=6 \month=6 \year=2012
+%\day=4 \month=5 \year=2023
 
 % Set name and title
 \author{Insert your name here}
 \title{Insert title here}
 \date{\today}
+
+% Bibliography
+\usepackage[style=numeric,giveninits=false,natbib=true,backend=biber,maxbibnames=99,defernumbers=true,language=autobib,date=long]{biblatex}
+\addbibresource{literature/literature.bib}
 
 %%%%%% %%%%%%
 
@@ -35,8 +39,6 @@
 
 % Figures
 \usepackage{graphicx}
-\usepackage{subfig}
-\usepackage{placeins}
 
 % Tables
 \usepackage{booktabs}
@@ -44,55 +46,39 @@
 \usepackage{multirow}
 
 % Math stuff and units
-\usepackage{latexsym,amsmath, amssymb, amsfonts, upgreek}
-\usepackage{siunitx}
-\newcommand{\mathup}{\mathrm}
-
-% Glossary
-\usepackage[nonumberlist, acronym, toc]{glossaries}
+\usepackage{amsmath, amssymb, amsfonts}
 
 % Enable quotes by \enquote{}
 \usepackage[babel,english=american, german=quotes]{csquotes}
 
-% Necessary for frontpage, allows to create automata and fancy graphics
-\usepackage{tikz}
+\usepackage{fontawesome5}
 
-% Protocols and bytefields
-\usepackage{protocol}
-\usepackage{bytefield}
-
-% Source code listings
-\newcommand{\code}[1]{\texttt{#1}}
-\definecolor{colIdentifier}{rgb}{0,0,0}
-\definecolor{colComments}{rgb}{0.5,0.5,0.5}
-\definecolor{colKeys}{rgb}{0,0,1}
-\definecolor{colString}{rgb}{0,0.6,0}
-
-\usepackage{caption}
-\usepackage{listings}
-\lstset{%
-	float=hbp,%
-	basicstyle=\ttfamily\scriptsize, %
-	identifierstyle=\color{colIdentifier}, %
-	keywordstyle=\color{colKeys}, %
-	stringstyle=\color{colString}, %
-	commentstyle=\color{colComments}, %
-	columns=flexible, %
-	tabsize=2, %
-	aboveskip={1.5\baselineskip}, %
-	frame=single, %
-	extendedchars=true, %
-	showspaces=false, %
-	showstringspaces=false, %
-	numberstyle=\tiny, %
-	breaklines=true, %
-	backgroundcolor=, %
-	breakautoindent=true, %
-	captionpos=b%
+\usepackage{minted}
+% Listings
+\setminted{
+	frame=single, % single, lines, leftline, topline, bottomline, none
+	fontsize=\footnotesize,
+        % fontsize=\scriptsize,
+	linenos=true,
+	numbersep=5pt,
+	breaklines=true,
+	breakautoindent=true,
+	breakbefore=.,
+	breakafter=-,
+	escapeinside=~~
 }
-
-% Algorithms
-\usepackage[ruled, vlined, linesnumbered,algochapter,algo2e]{algorithm2e}
+\BeforeBeginEnvironment{minted}{\smallskip}
+\AfterEndEnvironment{minted}{\smallskip}
+\setmintedinline{
+    fontsize=\small,
+    escapeinside=~~,
+    breakbefore=.,
+    breakafter=-:/\,
+}
+\newmintinline[code]{text}{}
+\newmintinline[js]{javascript}{}
+\newmintinline[html]{html}{}
+\newmintinline[json]{json}{}
 
 % Format page foot and header
 \usepackage{scrlayer-scrpage}
@@ -102,34 +88,6 @@
 \ohead{\pagemark}
 \ihead{\headmark}
 \pagestyle{scrheadings}
-
-%% use some standards for mathematical expressions:
-\newcommand{\red}{{\rm red}}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}[theorem]{Proposition}
-\newtheorem{corollary}[theorem]{Corollary}
-% \newtheorem{definition}[theorem]{Definition}
-\newtheorem{algorithm}[theorem]{Algorithm}
-\newenvironment{example}{\begin{quote}{\bf Example:}}{\end{quote}}
-
-% BIBTEX, http://mirrors.ctan.org/biblio/bibtex/contrib/babelbib/babelbib.pdf
-\usepackage{babelbib}
-\usepackage{url}
-\def\UrlBreaks{\do\/\do-}
-
-% \setbibpreamble{{\large Seitenzahlen, auf denen ein Eintrag referenziert wird, werden am Ende eines jeden Eintrags angegeben.}\newline} % Wegen der pagebackref-Option des hyperref-Packets, wird vielen nicht direkt klar was das soll http://projekte.dante.de/DanteFAQ/Verzeichnisse#16
-
-% gray definition boxes, that whay you'll find them in the text
-\usepackage{shadethm}
-\newshadetheorem{sthm}[figure]{Definition}
-\newenvironment{definition}[1][]{
-   \definecolor{shadethmcolor}{rgb}{.9,.9,.9}
-   \begin{sthm}[#1]
- }{\end{sthm}}
-
-% experimental
-%\usepackage{scrhack}
 
 % Hyperlinks and menu for your document
 \usepackage[breaklinks,hyperindex,colorlinks,anchorcolor=black,citecolor=black,filecolor=black,linkcolor=black,menucolor=black,urlcolor=black,pdftex]{hyperref} % pagebackref: Add page number to the references where they can be found
@@ -141,24 +99,6 @@
    pdftitle = {\@title},
    pdfauthor = {\@author},
    pdfsubject={\@title},
-   pdfkeywords={SAML, add more}, % CHANGE HERE
-%    unicode={true},
+   pdfkeywords={OpenID Connect, add more}, % CHANGE HERE
  }
 }
-\makeatother
-
-% Use the same counter for tables and figures
-\makeatletter
-\AtBeginDocument{
-\let\c@table\c@figure
-\let\c@lstlisting\c@table
-\let\c@algocf\c@lstlisting
-}
-\makeatother
-
-\ifpdf
-	\hypersetup{linktocpage=false} 	% false=links are section names, true=links are page numbers, IMPORTANT: in dvi2ps mode, 'true' is required!
-\else
-	\hypersetup{linktocpage=true} 		% false=links are section names, true=links are page numbers, IMPORTANT: in dvi2ps mode, 'true' is required!
-	\usepackage[hyphenbreaks]{breakurl}
-\fi

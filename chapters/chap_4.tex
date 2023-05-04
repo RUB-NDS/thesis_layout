@@ -1,2 +1,20 @@
 \chapter{Results} \label{chap:results}
-Lorem ipsum dolor sit amet consectetuer parturient ac pulvinar magna porttitor. Accumsan vel ac eros laoreet Nulla leo Nulla vel Pellentesque Quisque. Adipiscing penatibus Phasellus egestas leo id neque nec quis est orci. Porta tellus ligula ut ridiculus eros eget ut Vivamus dictum nulla. Dui wisi enim vitae nulla Fusce Curabitur congue consectetuer urna Quisque. Felis Vestibulum Quisque sed Vestibulum et malesuada ac id tristique vitae. Aliquam Suspendisse mattis et libero et tincidunt quis tellus eget consectetuer. Libero Morbi cursus augue eget dapibus tincidunt nunc parturient id arcu. Donec sapien enim Aenean convallis Donec elit tincidunt dolor vitae tellus. Ac consectetuer at tortor malesuada ac dui ligula habitant habitasse congue.
+
+It is \textbf{current best practices} to provide a brief overview on your most interesting results in the beginning.
+
+\newcommand{\vuln}{\faCircle}
+\newcommand{\notvuln}{\faCircle[regular]}
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{@{}llcccc@{}}
+      \toprule
+       & Browser & XSS & SQLi & CSRF & Clickjacking \\
+      \midrule
+      \faFirefox & Firefox & \notvuln & \vuln & \vuln & \vuln \\
+      \faChrome  & Chrome & \vuln & \notvuln & \vuln & \vuln \\
+      \faSafari  & Safari & \vuln & \vuln & \notvuln & \vuln \\
+      \bottomrule
+    \end{tabular}
+    \caption{Write a short message that everyone should understand, e.g., \enquote{All browsers were found vulnerable (\vuln{}) to Clickjacking} instead of simply writing \enquote{Evaluation results.}. Also describe what the symbols mean.}
+  \end{table}

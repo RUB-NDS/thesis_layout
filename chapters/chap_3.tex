@@ -20,22 +20,13 @@ One last piece of advice. Do not try to attend courses in parallel to your thesi
 
 \begin{itemize}
 \item It is very important, that if you want specific things to be done that you send these important instructions by mail. Your student might be in a moment of confusion when telling him.
-\item Attend the \enquote{Diplomandenseminar} and give your student the feeling, that this is important to you, too.
-\item Offer your students the opportunity to talk to you right after the \enquote{Diplomandenseminar}. While discussing things, tell your student to write down the results of this discussion and tell him to send you this summary by mail to ensure (if necessary), you did not talk at cross purposes.
+\item Attend the \enquote{Colloquium} and give your student the feeling, that this is important to you, too.
+\item Offer your students the opportunity to talk to you right after the \enquote{Colloquium}. While discussing things, tell your student to write down the results of this discussion and tell him to send you this summary by mail to ensure (if necessary), you did not talk at cross purposes.
 \item Last but not least: Please be gentle to your students \texttt{:-)}
 \end{itemize}
 
 \section{Hints on Typesetting}
-To get this template running, you need at least
-
-\begin{itemize}
-\item either TeXLive 2010 (use update utility and install the most recent packages!)
-\item or MikTeX (\textcolor{red}{IMPORTANT}: install the cm-super font package manually!)
-\end{itemize}
-
-This template is confirmed to work in both situations. In case it does not work for you, there is something wrong with your \LaTeX\/ environment \texttt{:-)}\\
-
-You can use \texttt{pdflatex} or \texttt{latex} to typeset this template.
+To get this template running, we recommend using \href{https://code.visualstudio.com/download}{VSCode} and \href{https://code.visualstudio.com/docs/devcontainers/tutorial}{Remote Containers}.
 
 \subsection{Structuring Text, English Hints}
 Another text about the following sections \dots
@@ -110,10 +101,6 @@ This inconsistency can be avoided by just using the glossary entry: \gls{ua}.
 
 \subsubsection{Formulas}
 
-Define abbrevations with the \verb+\acro{...}+ command, use them in the text mostly with \verb+\ac{...}+. (Yes, in this example there are still a lot of wrong abbrevations. Make it better :)
-
-So, testing abbrevations the \gls{aes} is written in different form. Lets see, when using the \gls{aes} again, what will happen :D .
-
 Using the method shown in Table~XX for all three functions yields.
 \begin{align}
 f_a^4 &= \mathrm{\texttt{0x2C79}} = \mathrm{abc} + \mathrm{ac} + \mathrm{ad} + \mathrm{bc} + \mathrm{a} + \mathrm{b} + \mathrm{d} + \mathrm{1} \\
@@ -140,22 +127,10 @@ The use of constants, variables and units is explained by \enquote{Rohde \& Schw
 \item Indices that are variables or physical units, like $a_{i, j}$ or $c_V$.
 \end{itemize}
 
-Always typeset the following upright:
 
-\begin{itemize}
-\item Functions with fixed name like $\sin(x)$ or $\Gamma (x)$.
-\item Mathematical constants like $\uppi$, $\mathrm{i}$ or $\mathrm{e}$.
-\item Units and their prefixes, like $\lambda = 0.56\,\upmu\mathrm{m}$, alternatively $\lambda = \SI{0.56}{\micro m}$.
-\item Indices that represent names or identifiers, like $x_\mathrm{max}$ or $\mu_\mathrm B$.
-\end{itemize}
+\subsubsection{Fontawesome}
 
-In case it is necessary to make heavy use of user defined functions, one should use \texttt{\textbackslash\/DeclareMathOperator} to define the corresponding function. Finally, a good example how it should \emph{not} look like.
-
-\[
-Throughput = 30 mbit/s
-\]
-
-In case you need some extra symbols: \url{http://mirror.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}
+In case you need some extra symbols, we recommend using Fontawesome \faChrome{}, \faFirefox{}, \faSafari{}.
 
 \subsubsection{Figures}
 
@@ -213,134 +188,29 @@ There are many possibilities on how to create and include tables. From a typogra
 	\end{minipage}
 \end{table}
 
+\subsection{Glossaries}
 
-\subsubsection{Definitions}
+The \texttt{glossaries} package in LaTeX allows you to create glossaries and lists of acronyms in your document. This is particularly useful in academic writing, where it is important to ensure consistency in the use of terminology.
 
-This is a definition. You can of course make a reference to it~\ref{def1}.
+To create an acronym using \texttt{glossaries}, you first need to define it using the \texttt{newacronym} command. For example, \code|\newacronym{ua}{UA}{User-Agent}| defines the acronym \enquote{UA} with the corresponding expansion \enquote{User-Agent}.
 
-\begin{definition}[A name]\label{def1}
- A really good definition. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-\end{definition}
+To create a glossary entry, you can use the \texttt{newglossaryentry} command. For example, \code|\newglossaryentry{xss}{name={XSS}, description={Cross-Site-Scripting...}}| creates a glossary entry with the label \enquote{xss}, the name \enquote{XSS}, and the description \enquote{Cross-Site-Scripting...}.
 
+To reference an acronym or glossary entry in your text, you can use the \texttt{gls} command. For example, \code|The \gls{sso} system enables...| will produce \enquote{The Single Sign-On (SSO) system enables...}.
 
-\subsection{Listings, Algorithms}
+Glossaries are important in academic writing because they help ensure consistency in the use of terminology. By defining acronyms and glossary entries up front, students can ensure they are using the correct terminology throughout their thesis. This helps to prevent variations such as \enquote{Single Sign-On}, \enquote{Single-Sign-On}, or \enquote{Single-Sign On}, which can be confusing for readers and detract from the clarity of the writing.
+
+\subsection{Listings}
 
 \subsubsection{Listings}
-For source code listings, three options are available:
-\begin{itemize}
-\item the \texttt{verbatim} environment,
-\item the \texttt{listings} package,
-\item and the \texttt{lgrind} package.
-\end{itemize}
 
-The verbatim environment is the most simple environment and not suited for large code listings (due to different limitations). Only use it for single
+We recommend using the \href{https://de.overleaf.com/learn/latex/Code_Highlighting_with_minted}{minted} package for code highlighting.
 
-\begin{verbatim}
-$ important shell commands
-\end{verbatim}
+\begin{minted}{python}
+def myFunction(param):
+	return param + 1
 
-Otherwise, either use the \texttt{listings} or \texttt{lgrind} packages. The listings package is easier to use, therefore we present it here. \emph{Important} advice: Only explain important functions and/or structures of your program in your thesis..Especially point out the big picture of your program, for instance, how different modules interact and which important input limitations to respect. Please note: Using special language characters (\^{e},\/ \"{u},\/ \"{a}, \dots) in your source code is strongly discouraged, as they may cause problems using the \texttt{listings} package.
-
-\begin{lstlisting}[language={C}, caption={A sample listing of a C function. Description of the function is here. Please note that different languages are available.}, numbers=left]
-/*!
- * This is a Doxygen comment for a function.
- * \param first operand
- * \param second operand
- * \returns a+b
- */
-int  sum(int a, int b)
-{
-	return (a + b);
-}
-\end{lstlisting}
-
-\begin{lstlisting}[language={VHDL}, caption={A sample listing of a VHDL entity. Description of the entity is here. Please note that different languages are available.}, numbers=left]
-entity InterLeavedMul is
-	generic(wide  : natural :=8); -- highest bit
-  port(clk  : in std_logic;
-       rst  : in std_logic;
-       x    : in std_logic_vector(wide-1 downto 0);
-       y    : in std_logic_vector(wide-1 downto 0);
-       N    : in std_logic_vector(wide-1 downto 0);
-			 start: in std_logic;
-       done : out std_logic;
-       xyN  : out std_logic_vector(wide-1 downto 0));
-end  InterLeavedMul;
-\end{lstlisting}
+myFunction(5)
+\end{minted}
 
 You should thoroughly document your code using comments and (best case) by using a documentation system like Doxygen. Please ask your supervisor for additional rules (e.\,g. which repository system to use, etc.). Regularly commit your changes and backup your data!
-
-\subsubsection{Algorithms}
-
-For many theses, typesetting algorithms is necessary. There are at least four packages available that allow easy typesetting of algorithms.
-
-\begin{itemize}
-\item \texttt{program} offering the environment \texttt{program}.
-\item \texttt{algorithm} offering the environment \texttt{algorithm}.
-\item \texttt{algorithmic} offering the environment \texttt{algorithmic}.
-	\begin{itemize}
-	\item This package sometimes has compatibility problems with \texttt{hyperref}.
-	\end{itemize}
-\item \texttt{algorithm2e} either offering the environment \texttt{algorithm} or \texttt{algorithm2e}.
-\end{itemize}
-
-Students are advised to use only \emph{one} of these packages and not mix them. The author of this template suggests to use the package \texttt{algorithm2e} with the option \texttt{algo2e}. This prevents conflicts with other packages, just in case it is ever required to mix \texttt{algorithm} or \texttt{algorithmic} with \texttt{algorithm2e}.
-
-\begin{algorithm2e}
-\KwData{unsorted array $A[1 \ldots n]$}
-\KwResult{array $A[1 \ldots n]$ with $A[1] \leq A[2] \leq \ldots \leq A[n]$}
-\caption{\textsc{Insertion-Sort}}
-
-\Begin{
-\For{$j \leftarrow 2$ \KwTo $\mathrm{length}[A]$}{
-$key \leftarrow A[j]$\;
-\tcc{Insert $A[j]$ into the sorted sequence $A[1 \ldots j -1]$}
-$i \leftarrow j - 1$\;
-\While{$i > 0$ \KwSty{and} $A[i] > key$}{\;
-$A[i+1] \leftarrow A[i]$\;
-$i \leftarrow i-1$
-}
-$A[i+1] \leftarrow key$
-}
-}
-\end{algorithm2e}
-
-\clearpage
-
-\subsection{Protocols}
-
-\subsubsection{2-Party Protocol Sessions}
-\begin{figure}[!htb]
-\fbox{\begin{minipage}{\textwidth}%
-\begin{protocol}{2}
-\participants{\textbf{Reader}}{\textbf{Transponder}} \\
-					& \sends{\texttt{Start\_Auth} \texttt{[11000]}}		    				 &	\\
-                                      	&  \receives{\texttt{Header [11111], Serial Number [31..0]}}			 & \\
-\texttt{compute Auth$_B$}&  \sends{\texttt{IV [31..0], Auth$_B$ [31..0]}}						 & \texttt{compute Auth$_T$} \\
-\texttt{generate IV}		& 														 & \texttt{Auth$_B \stackrel{?}{=}$ Auth$_T$}\\
-	                                      &  \receives{\texttt{Header [11111], Page 3 [31..0]$_{k}$}}			 & \\
-\end{protocol}
-\end{minipage}}%
-\caption{Mutual authentication of the HITAG~2 protocol in crypto mode.}
-\label{fig:authcrypto}
-\end{figure}
-
-\subsubsection{Protocol Headers}
-
-\begin{figure}[!htb]
-\begin{center}
-\begin{bytefield}[bitwidth=1.8em]{16}\\
-\bitheader{0-15} \\
-\wordbox{1}{ID} \\
-\bitbox{1}{{QR}} & \bitbox{4}{Opcode} & \bitbox{1}{AA} & \bitbox{1}{TC} & \bitbox{1}{RD} & \bitbox{1}{RA}
-\bitbox{3}{Z} & \bitbox{4}{RCODE} \\
-\wordbox{1}{QDCOUNT} \\
-\wordbox{1}{ANCOUNT} \\
-\wordbox{1}{NSCOUNT} \\
-\wordbox{1}{ARCOUNT} \\
-\end{bytefield}
-\caption{DNS Request}
-\end{center}
-\label{fig:dnsheader}
-\end{figure}
-

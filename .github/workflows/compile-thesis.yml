@@ -2,7 +2,7 @@
 
 name: Document Build
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
@@ -30,3 +30,4 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: thesis.tex
+          latexmk_shell_escape: true # necessary for minted package

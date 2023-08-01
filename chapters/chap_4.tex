@@ -1,6 +1,7 @@
 \chapter{Results} \label{chap:results}
 
-It is \textbf{current best practices} to provide a brief overview on your most interesting results in the beginning.
+It is \textbf{\gls{bcp}} to provide a brief overview on your most interesting results in the beginning.
+In \autoref{tab:results} you can see the results of our \gls{sso} evaluation against \gls{xss}, \gls{sqli}, \gls{csrf} and \gls{clickjacking} attacks.
 
 \newcommand{\vuln}{\faCircle}
 \newcommand{\notvuln}{\faCircle[regular]}
@@ -16,5 +17,6 @@ It is \textbf{current best practices} to provide a brief overview on your most i
       \faSafari  & Safari & \vuln & \vuln & \notvuln & \vuln \\
       \bottomrule
     \end{tabular}
+    \label{tab:results}
     \caption{Write a short message that everyone should understand, e.g., \enquote{All browsers were found vulnerable (\vuln{}) to Clickjacking} instead of simply writing \enquote{Evaluation results.}. Also describe what the symbols mean.}
   \end{table}

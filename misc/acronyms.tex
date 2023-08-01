@@ -1,16 +1,22 @@
 % Glossary
-\usepackage[nonumberlist, acronym, toc]{glossaries}
+\usepackage[toc]{glossaries}
+\makeglossaries
 
 %%%%%%%%%%%
 % ACRONYM %
 %%%%%%%%%%%
 \newacronym[]{ua}{UA}{User-Agent}
 \newacronym{sso}{SSO}{Single Sign-On}
+\newacronym{xss}{XSS}{Cross-Site Scripting}
+\newacronym{sqli}{SQLi}{SQL Injection}
+\newacronym{csrf}{CSRF}{Cross-Site Request Forgery}
+\newacronym{clickjacking}{Clickjacking}{Clickjacking}
 
 %%%%%%%%%%%
 % GLOSSAR %
 %%%%%%%%%%%
-\newglossaryentry{xss}{%
-    name={XSS},
-    description={Cross-Site-Scripting is a web application vulnerability which tries to execute an attacker script within the context of the website owner within the user's browser},
+\newglossaryentry{bcp}
+{
+    name={Best Current Practices},
+    description={Best Current Practices (BCPs) refer to the most effective and recommended methods, techniques, or strategies that are currently recognized as the most appropriate for achieving desired outcomes in a specific field or industry. These practices are based on the latest research, industry standards, and expert consensus. BCPs are considered the current gold standard and are regularly updated to reflect advancements and changes in the field. They provide guidance and serve as a reference for professionals to make informed decisions and improve their processes, workflows, and outcomes.}
 }

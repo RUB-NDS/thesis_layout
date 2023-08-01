@@ -279,3 +279,4 @@ TSWLatexianTemp*
 *.log
 *.tex
 *.aux
+*.ist

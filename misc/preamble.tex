@@ -91,6 +91,15 @@
 
 % Hyperlinks and menu for your document
 \usepackage[breaklinks,hyperindex,colorlinks,anchorcolor=black,citecolor=black,filecolor=black,linkcolor=black,menucolor=black,urlcolor=black,pdftex]{hyperref} % pagebackref: Add page number to the references where they can be found
+\addto\extrasenglish{ % Capitalize Refs, Write "Listing 1" instead of just "1"
+  \def\chapterautorefname{Chapter}
+  \def\sectionautorefname{Section}
+  \def\subsectionautorefname{Subsection}
+  \def\subsubsectionautorefname{Subsubsection}
+  \def\paragraphautorefname{Paragraph}
+  \def\subparagraphautorefname{Subparagraph}
+  \def\listingautorefname{Listing}
+}
 % DO NOT LOAD ANY OF YOUR PACKAGES BEYOND THIS PACKAGE
 
 \makeatletter

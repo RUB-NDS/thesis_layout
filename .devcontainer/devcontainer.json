@@ -21,6 +21,7 @@
             "Protocol"
           ]
         },
+        "ltex.java.path": "/usr/lib/jvm/java-17-openjdk",
         "latex-workshop.latex.tools": [
           {
             "name": "latexmk",

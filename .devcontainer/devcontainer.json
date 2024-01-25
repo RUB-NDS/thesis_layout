@@ -21,6 +21,7 @@
             "Protocol"
           ]
         },
+        "ltex.java.path": "/usr/lib/jvm/msopenjdk-current",
         "latex-workshop.latex.tools": [
           {
             "name": "latexmk",

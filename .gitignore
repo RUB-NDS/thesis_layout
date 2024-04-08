@@ -279,3 +279,4 @@ TSWLatexianTemp*
 *.log
 *.aux
 *.ist
+.DS_Store

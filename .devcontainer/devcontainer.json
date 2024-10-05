@@ -1,27 +1,20 @@
 {
   "name": "LaTeX",
-  "dockerFile": "Dockerfile",
+  "image": "ghcr.io/chearix/vscode-devcontainer-latex:main",
   "customizations": {
     "vscode": {
       "settings": {
-        "telemetry.enableTelemetry": false,
         "files.trimTrailingWhitespace": true,
-        "latex-workshop.view.pdf.viewer": "tab",
+        "java.home": "/usr/lib/jvm/default-java",
         "latex-workshop.synctex.afterBuild.enabled": true,
-        "latex-workshop.view.pdf.trim": 1,
-        "ltex.language": "en-US",
-        "ltex.latex.commands": {
-          "\\lstinput{}": "ignore",
-          "\\lstinline||": "ignore",
-          "\\lstinline{}": "ignore"
-        },
-        "ltex.dictionary": {
-          "de-DE": [
-            "Configuration",
-            "Protocol"
-          ]
-        },
-        "ltex.java.path": "/usr/lib/jvm/msopenjdk-current",
+        "latex-workshop.latex.recipes": [
+          {
+            "name": "latexmk",
+            "tools": [
+              "latexmk"
+            ]
+          }
+        ],
         "latex-workshop.latex.tools": [
           {
             "name": "latexmk",
@@ -37,27 +30,33 @@
             ],
             "env": {}
           }
-        ]
+        ],
+        "latex-workshop.view.pdf.trim": 1,
+        "latex-workshop.view.pdf.viewer": "tab",
+        "ltex.java.path": "/usr/lib/jvm/default-java",
+        "ltex.language": "en-US",
+        "ltex.latex.commands": {
+          "\\lstinput{}": "ignore",
+          "\\lstinline||": "ignore",
+          "\\lstinline{}": "ignore"
+        },
+        "telemetry.enableTelemetry": false,
+        "todo-tree.regex.regex": "%\\s*($TAGS)",
+        "todo-tree.regex.regexCaseSensitive": false
       },
       "extensions": [
-        // LaTeX
+        "Gruntfuggly.todo-tree",
         "james-yu.latex-workshop",
-        "tecosaur.latex-utilities",
-        // Language
-        "valentjn.vscode-ltex",
-        // TODOs
-        "Gruntfuggly.todo-tree"
+        "ltex-plus.vscode-ltex-plus",
+        "tecosaur.latex-utilities"
       ]
-    }
-  },
-  "forwardPorts": [
-    35555
-  ],
-  "containerUser": "vscode",
-  // Fix for SELinux (Fedora), Podman, ...
-  // "remoteUser": "vscode",
-  // "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,Z",
-  // "runArgs": [
-  //   "--userns=keep-id"
-  // ]
+    },
+    "containerUser": "vscode"
+    // Fix for SELinux (Fedora), Podman, ...
+    // "remoteUser": "vscode",
+    // "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,Z",
+    // "runArgs": [
+    //   "--userns=keep-id"
+    // ]
+  }
 }

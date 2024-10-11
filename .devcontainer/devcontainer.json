@@ -4,6 +4,10 @@
   "customizations": {
     "vscode": {
       "settings": {
+        "commentAnchors.tags.matchPrefix": [
+          "#",
+          "%"
+        ],
         "files.trimTrailingWhitespace": true,
         "java.home": "/usr/lib/jvm/default-java",
         "latex-workshop.synctex.afterBuild.enabled": true,
@@ -45,7 +49,7 @@
         "todo-tree.regex.regexCaseSensitive": false
       },
       "extensions": [
-        "Gruntfuggly.todo-tree",
+        "ExodiusStudios.comment-anchors",
         "james-yu.latex-workshop",
         "ltex-plus.vscode-ltex-plus",
         "tecosaur.latex-utilities"

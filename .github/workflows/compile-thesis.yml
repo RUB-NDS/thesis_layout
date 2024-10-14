@@ -27,7 +27,7 @@ jobs:
 
       # Compile the thesis
       - name: Compile thesis
-        uses: xu-cheng/latex-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
           root_file: thesis.tex
           latexmk_shell_escape: true # necessary for minted package

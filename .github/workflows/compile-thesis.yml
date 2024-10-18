@@ -31,3 +31,4 @@ jobs:
         with:
           root_file: thesis.tex
           latexmk_shell_escape: true # necessary for minted package
+          docker_image: ghcr.io/chearix/vscode-devcontainer-latex:main

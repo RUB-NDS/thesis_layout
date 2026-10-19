@@ -23,12 +23,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Compile the thesis
       - name: Compile thesis
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: thesis.tex
           latexmk_shell_escape: true # necessary for minted package
-          docker_image: ghcr.io/chearix/vscode-devcontainer-latex:main
+          docker_image: ghcr.io/chearix/vscode-devcontainer-latex:2026

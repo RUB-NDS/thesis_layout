@@ -1,66 +1,18 @@
 {
   "name": "LaTeX",
-  "image": "ghcr.io/chearix/vscode-devcontainer-latex:main",
+  "image": "ghcr.io/chearix/vscode-devcontainer-latex:2026",
   "customizations": {
     "vscode": {
       "settings": {
-        "commentAnchors.tags.matchPrefix": [
-          "#",
-          "%"
-        ],
-        "files.trimTrailingWhitespace": true,
-        "java.home": "/usr/lib/jvm/default-java",
-        "latex-workshop.synctex.afterBuild.enabled": true,
-        "latex-workshop.latex.recipes": [
-          {
-            "name": "latexmk",
-            "tools": [
-              "latexmk"
-            ]
-          }
-        ],
-        "latex-workshop.latex.tools": [
-          {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-              "-shell-escape",
-              "-synctex=1",
-              "-interaction=nonstopmode",
-              "-file-line-error",
-              "-pdf",
-              "-outdir=%OUTDIR%",
-              "%DOC%"
-            ],
-            "env": {}
-          }
-        ],
-        "latex-workshop.view.pdf.trim": 1,
-        "latex-workshop.view.pdf.viewer": "tab",
-        "ltex.java.path": "/usr/lib/jvm/default-java",
-        "ltex.language": "en-US",
-        "ltex.latex.commands": {
-          "\\lstinput{}": "ignore",
-          "\\lstinline||": "ignore",
-          "\\lstinline{}": "ignore"
-        },
-        "telemetry.enableTelemetry": false,
-        "todo-tree.regex.regex": "%\\s*($TAGS)",
-        "todo-tree.regex.regexCaseSensitive": false
-      },
-      "extensions": [
-        "ExodiusStudios.comment-anchors",
-        "james-yu.latex-workshop",
-        "ltex-plus.vscode-ltex-plus",
-        "tecosaur.latex-utilities"
-      ]
-    },
-    "containerUser": "vscode"
-    // Fix for SELinux (Fedora), Podman, ...
-    // "remoteUser": "vscode",
-    // "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,Z",
-    // "runArgs": [
-    //   "--userns=keep-id"
-    // ]
+        "telemetry.telemetryLevel": "off"
+      }
+    }
   }
+
+  // Podman / Fedora (SELinux) fix
+  // "containerUser": "vscode",
+  // "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,Z",
+  // "runArgs": [
+  //   "--userns=keep-id"
+  // ]
 }

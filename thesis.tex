@@ -52,10 +52,6 @@ BCOR=1cm, % Bindekorrektur: Change this accordingly, also read the KomaScript Gu
 
 \input{chapters/chap_6}
 
-%% include appendix
-
-\appendix
-
 \pagestyle{scrplain} % turn off headers and footers
 \printglossaries
 
@@ -67,14 +63,18 @@ BCOR=1cm, % Bindekorrektur: Change this accordingly, also read the KomaScript Gu
 %% generate list of tables, optional, remove it if you do not like it
 \listoftables
 
-\chapter{List of AI-Tools}
-\input{appendix/tools}
-
 %% generate bibliography with bibtex, the bibfile here is "literature/literature.bib"
 \flushbottom
 \printbibliography
 
 \KOMAoptions{open=right} % Plaziert Kapitel wieder nur auf rechten Seiten
+
+%% include appendix
+
+\appendix
+
+\chapter{List of AI-Tools}
+\input{appendix/tools}
 
 \input{chapters/chap_appendix}
 

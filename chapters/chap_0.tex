@@ -57,7 +57,7 @@ I furthermore agree that the digital version of this thesis will be used to subj
 \noindent
 Not this English translation but only the official version in German is legally binding.
 
-\fbox{
+\fbox{%
  \begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}
     \begin{Form}
     Beim Verfassen dieser Arbeit habe ich die unten aufgeführten KI-Tools für folgende Zwecke verwendet:
@@ -70,13 +70,14 @@ Not this English translation but only the official version in German is legally 
     \TextField[
     multiline=true, % Allows multiple lines of text
     height=10cm,     % Specifies the height of the box
-    width=\textwidth, % Makes the box span the width of the text area
-    borderstyle={solid}, % Adds a visible border
+    width=\linewidth, % Makes the box span the width of the text area
+    borderstyle=S, % Adds a visible border
+    bordercolor=black,
     ]{}
 
     \vspace{1em}
     \end{Form}
-  \end{minipage}
+  \end{minipage}%
 }
 
 \makeatletter

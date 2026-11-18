@@ -32,4 +32,4 @@ latexmk -pdf thesis.tex
 
 With older TeX Live versions, the `minted` package additionally needs `--shell-escape`.
 
-The PDF of the latest build can be downloaded as an artifact of the [Document Build](https://github.com/RUB-NDS/thesis_layout/actions/workflows/compile-thesis.yml) workflow.
+The PDF of the latest build: [thesis.pdf](https://github.com/RUB-NDS/thesis_layout/releases/latest/download/thesis.pdf).

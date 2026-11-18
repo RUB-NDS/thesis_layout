@@ -4,9 +4,9 @@ name: Document Build
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push to master or v2026 and on pull requests to master
   push:
-    branches: [ master ]
+    branches: [ master, v2026 ]
   pull_request:
     branches: [ master ]
 
@@ -32,3 +32,11 @@ jobs:
           root_file: thesis.tex
           latexmk_shell_escape: true # necessary for minted package
           docker_image: ghcr.io/chearix/vscode-devcontainer-latex:2026
+
+      # Make the built PDF available for download
+      - name: Upload PDF
+        uses: actions/upload-artifact@v7
+        with:
+          name: thesis
+          path: thesis.pdf
+          if-no-files-found: error

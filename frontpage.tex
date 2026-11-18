@@ -1,12 +1,8 @@
-% Hintergrund-Makro
-\newcommand\BackgroundPic{
-\put(0,0){
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill
-\centering
+% Background picture
+\newcommand\BackgroundPic{%
+\AtPageLowerLeft{%
 \includegraphics[width=\paperwidth,height=\paperheight]{images/front.png}%
-\vfill
-}}}
+}}
 
 \AddToShipoutPicture*{\BackgroundPic}
 \begin{titlepage}

@@ -20,6 +20,10 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
+    # Needed to create and update the release
+    permissions:
+      contents: write
+
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -40,3 +44,17 @@ jobs:
           name: thesis
           path: thesis.pdf
           if-no-files-found: error
+
+      # Keep a rolling "latest" release with the PDF
+      # Stable link: https://github.com/RUB-NDS/thesis_layout/releases/latest/download/thesis.pdf
+      - name: Update "latest" release
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          git tag -f latest
+          git push -f origin latest
+          gh release view latest > /dev/null 2>&1 || gh release create latest --title "Latest build" --notes ""
+          gh release upload latest thesis.pdf --clobber
+          gh release edit latest --notes "Built automatically from commit ${GITHUB_SHA}."

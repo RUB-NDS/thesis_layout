@@ -2,16 +2,14 @@
 \makeatletter
 \null
 \begin{tikzpicture}[remember picture,overlay]
-% Logos
+% Logo
 \node[anchor=north west,inner sep=0pt] at ([shift={(20mm,-20mm)}]current page.north west)
 	{\includegraphics[height=18mm]{images/rub_logo.pdf}};
-\node[anchor=south east,inner sep=0pt] at ([shift={(-20mm,-38mm)}]current page.north east)
-	{\includegraphics[height=23mm]{images/hgi_logo.pdf}};
 % Title and thesis information
 \node[anchor=north west,inner sep=0pt,text width=170mm,align=flush left,text=rubblue]
 	at ([shift={(20mm,-65mm)}]current page.north west) {%
 	\sffamily\fontsize{12}{15}\selectfont\setlength{\parskip}{0pt}%
-	{\fontsize{28}{33}\fontseries{eb}\selectfont\@title\par}
+	{\fontsize{31}{36}\fontseries{eb}\selectfont\@title\par} % 28 pt at font scale 0.9
 	\vspace{20mm}
 	\thesistype\par
 	\vspace{8mm}

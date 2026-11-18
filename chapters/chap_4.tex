@@ -146,12 +146,14 @@ Figures and tables are important to explain things. Here are some rules that app
 	\end{itemize}
 \end{itemize}
 
-There are many possibilities on how to include figures, here is just one example on how to do it. In case you need further assistance, please google for \texttt{l2picfaq}.
+There are many possibilities on how to include figures, \autoref{fig:example} is just one example on how to do it. In case you need further assistance, please google for \texttt{l2picfaq}.
 
-
-% THIS IS A COOL AND DIRTY HACK FOR PDFLATEX USERS :-)
-% LATEX USERS ARE NOT ABLE TO USE THIS
-% TYPESET THIS DOCUMENT USING BOTH METHODS AND SEE THE DIFFERENCE
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{images/hgi_nds_2.pdf}
+	\caption[This is the short caption for the \textit{List of Figures}.]{Captions for figures are \emph{always below} the figure.}
+	\label{fig:example}
+\end{figure}
 
 \subsubsection{Tables}
 

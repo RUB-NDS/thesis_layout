@@ -1,26 +1,44 @@
-\begin{abstract}
-This template is meant to provide an easy onboarding with \LaTeX.
-We recommend using VSCode with the remote containers extensions.
-Once you open this repository, you are asked to reopen in a container.
+%% roman page numbers for the front matter
+\pagenumbering{roman}
 
-This container provides many useful features, such as
-\begin{itemize}
-    \item Automatic \LaTeX{} compilation on save.
-    \item PDF Preview on the side. You can click in the PDF to find the \LaTeX{} source code, or you can sync our PDF view with your current Tex-File.
-    \item Many useful keyboard shortcuts, e.g. for \textbf{bold} or \emph{italic} text.
-    \item Automatic \textbf{grammar check} using Ltex Extension. It uses LanguageTool internally.
-    \item Automatic \textbf{spell check}. You will see little yellow indicators in the editor.
-    \item Many more\ldots you can provide pull requests to list your favorites features here.
-\end{itemize}
+%% title page
+\begin{titlepage}
+\makeatletter
+\null
+\begin{tikzpicture}[remember picture,overlay]
+% Logo
+\node[anchor=north west,inner sep=0pt] at ([shift={(20mm,-20mm)}]current page.north west)
+	{\includegraphics[height=18mm]{images/rub_logo.pdf}};
+% Title and thesis information
+\node[anchor=north west,inner sep=0pt,text width=170mm,align=flush left,text=rubblue]
+	at ([shift={(20mm,-65mm)}]current page.north west) {%
+	\sffamily\fontsize{12}{15}\selectfont\setlength{\parskip}{0pt}%
+	{\fontsize{31}{36}\fontseries{eb}\selectfont\@title\par} % 28 pt at font scale 0.9
+	\vspace{20mm}
+	\thesistype\par
+	\vspace{8mm}
+	Faculty of Computer Science\par
+	Chair for Network and Data Security\par
+	Ruhr-Universität Bochum\par
+	\vspace{14mm}
+	\textbf{Author:}\par
+	\@author\par
+	\vspace{8mm}
+	\textbf{Supervisor:}\par
+	\supervisor\par
+	\vspace{8mm}
+	\textbf{Advisor:}\par
+	\advisor\par
+	\vspace{8mm}
+	\textbf{Submission Date:}\par
+	\@date\par
+};
+\end{tikzpicture}
+\makeatother
+\end{titlepage}
 
-How can I improve my scientific writing skills?
-\begin{itemize}
- \item \url{https://www.zfw.rub.de/sz/}
- \item \url{http://www.cs.joensuu.fi/pages/whamalai/sciwri/sciwri.pdf}
- \item \url{https://www.student.unsw.edu.au/writing}
- \item \url{https://www.sydney.edu.au/content/dam/students/documents/learning-resources/learning-centre/writing-a-thesis-proposal.pdf}
-\end{itemize}
-\end{abstract}
+%% abstract
+\input{chapters/abstract}
 
 \cleardoublepage
 
@@ -60,3 +78,7 @@ Weiterhin erkläre ich mich damit einverstanden, dass die Abschlussarbeit auf de
 \tableofcontents
 
 \cleardoublepage
+
+%% arabic page numbers for the rest of the text
+\pagenumbering{arabic}
+\setcounter{page}{1}

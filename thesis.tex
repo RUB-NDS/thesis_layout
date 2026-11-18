@@ -4,59 +4,20 @@
 \input{template/preamble}
 \input{misc/acronyms.tex}
 
-%% here your document starts
 \begin{document}
 
-%% switch to roman paginating for the acknowledgements, table of contents etc.
-\pagenumbering{roman} % uncomment this if you like it
-
-%% title page --- made out of expressions defined above
-\input{frontpage}
-
-\input{chapters/chap_0}
-
-\pagenumbering{arabic} %switches to arabic numbers for the rest of the text
-\setcounter{page}{1}
-
-%%
-%% include all your chapters as .tex files,
-%% each file contains sections \section{name of section},
-%% subsections \subsections{...} and so on...
-%%
+\input{template/frontmatter}
 
 \input{chapters/chap_1}
-
 \input{chapters/chap_2}
-
 \input{chapters/chap_3}
-
 \input{chapters/chap_4}
-
 \input{chapters/chap_5}
-
 \input{chapters/chap_6}
 
-\pagestyle{scrplain} % turn off headers and footers
-\printglossaries
-
-%% generate list of figures, optional, remove it if you do not like it
-\listoffigures
-
-\KOMAoptions{open=any} % Plaziert Kapitel auch auf linken Seiten
-
-%% generate list of tables, optional, remove it if you do not like it
-\listoftables
-
-%% generate bibliography with bibtex, the bibfile here is "literature/literature.bib"
-\flushbottom
-\printbibliography
-
-\KOMAoptions{open=right} % Plaziert Kapitel wieder nur auf rechten Seiten
-
-%% include appendix
+\input{template/backmatter}
 
 \appendix
-
 \input{chapters/chap_appendix}
 
 \end{document}

@@ -48,9 +48,6 @@
 % Math stuff and units
 \usepackage{amsmath, amssymb, amsfonts}
 
-% Enable quotes by \enquote{}
-\usepackage[babel,english=american, german=quotes]{csquotes}
-
 \usepackage{fontawesome5}
 
 \usepackage{minted}
@@ -80,10 +77,12 @@
 \newmintinline[html]{html}{}
 \newmintinline[json]{json}{}
 
+% Enable quotes by \enquote{}
+\usepackage[babel,english=american, german=quotes]{csquotes}
+
 % Format page foot and header
 \usepackage{scrlayer-scrpage}
-\clearscrheadings
-\clearscrheadfoot
+\clearpairofpagestyles
 \automark[section]{chapter}
 \ohead{\pagemark}
 \ihead{\headmark}
@@ -112,3 +111,4 @@
    pdfkeywords={OpenID Connect, add more}, % CHANGE HERE
  }
 }
+\makeatother

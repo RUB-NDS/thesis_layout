@@ -201,13 +201,17 @@ By defining acronyms and glossary entries up front, students can ensure they are
 
 \subsubsection{Listings}
 
-We recommend using the \href{https://de.overleaf.com/learn/latex/Code_Highlighting_with_minted}{minted} package for code highlighting.
+We recommend using the \href{https://de.overleaf.com/learn/latex/Code_Highlighting_with_minted}{minted} package for code highlighting, see \autoref{lst:example}.
 
+\begin{listing}[htbp]
 \begin{minted}{python}
 def myFunction(param):
 	return param + 1
 
 myFunction(5)
 \end{minted}
+\caption{Captions for listings are \emph{always below} the listing.}
+\label{lst:example}
+\end{listing}
 
 You should thoroughly document your code using comments and (best case) by using a documentation system like Doxygen. Please ask your supervisor for additional rules (e.\,g. which repository system to use, etc.). Regularly commit your changes and backup your data!

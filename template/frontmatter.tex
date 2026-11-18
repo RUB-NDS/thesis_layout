@@ -44,15 +44,8 @@
 
 \pagestyle{scrplain} % switch off headers and footers
 
-% Official declaration form of the faculty, filled in from the thesis data
-\makeatletter
-\includepdf[pagecommand={\thispagestyle{empty}%
-\begin{tikzpicture}[remember picture,overlay,every node/.style={font=\sffamily\small,anchor=north west,inner sep=2mm,text width=166mm,align=flush left}]
-\node at ([shift={(20mm,-38.7mm)}]current page.north west) {\@title};
-\node at ([shift={(20mm,-198.3mm)}]current page.north west) {\aitools};
-\node[anchor=south west,inner sep=0pt,text width=60mm] at ([shift={(60mm,28.2mm)}]current page.south west) {\@author};
-\end{tikzpicture}}]{forms/declaration.pdf}
-\makeatother
+% Official declaration form of the faculty
+\includepdf{forms/declaration.pdf}
 
 \cleardoublepage
 

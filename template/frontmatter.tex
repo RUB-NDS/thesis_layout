@@ -38,17 +38,18 @@
 
 \pagestyle{scrplain} % switch off headers and footers
 
-% Official declaration form of the faculty, text fields rebuilt (positions in bp)
+% Fillable text fields on the next two pages
 \begin{Form}
+\renewcommand{\DefaultOptionsofText}{print,bordercolor=,backgroundcolor=,charsize=9pt}
+
+% Official declaration form of the faculty, text fields rebuilt (positions in bp)
 \includepdf[picturecommand={%
   \setlength{\unitlength}{1bp}%
-  \renewcommand{\DefaultOptionsofText}{print,bordercolor=,backgroundcolor=,charsize=9pt}%
   \put(57,682){\TextField[name=title,multiline,width=482bp,height=50bp]{}}%
   \put(57,127){\TextField[name=aitools,multiline,width=482bp,height=152bp,charsize=8pt]{}}%
   \put(62,78){\TextField[name=date,width=76bp,height=22bp]{}}%
   \put(169,78){\TextField[name=name,width=175bp,height=22bp]{}}%
 }]{forms/declaration.pdf}
-\end{Form}
 
 \cleardoublepage
 
@@ -69,10 +70,12 @@ as part of this thesis may also be published and reused as open-source software.
 \vspace{2cm}
 \begin{center}\small
 \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
-  \hrulefill & \hrulefill\\
+  \TextField[name=consentdate,width=0.34\textwidth,height=16pt]{} & \TextField[name=consentname,width=0.62\textwidth,height=16pt]{}\\
+  \cline{1-1}\cline{2-2}
   Ort \& Datum / Place \& Date & Name \& Matrikelnummer / Name \& Matriculation No.
 \end{tabular*}
 \end{center}
+\end{Form}
 
 \cleardoublepage
 

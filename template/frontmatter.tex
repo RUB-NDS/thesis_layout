@@ -1,3 +1,8 @@
+%% name of the thesis type
+\ifdefstring{\thesistype}{bachelor}{\def\thesisname{Bachelor's Thesis}}{}
+\ifdefstring{\thesistype}{master}{\def\thesisname{Master's Thesis}}{}
+\ifdefstring{\thesistype}{seminar}{\def\thesisname{Seminar Thesis}}{}
+
 %% roman page numbers for the front matter
 \pagenumbering{roman}
 
@@ -9,7 +14,7 @@
   Faculty of Computer Science\\
   Chair for Network and Data Security
 
-  \textit{\thesistype}
+  \textit{\thesisname}
 
   \begingroup
     \large

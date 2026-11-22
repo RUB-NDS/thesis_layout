@@ -1,13 +1,13 @@
 # NDS Thesis Layout
 [![Document Build](https://github.com/RUB-NDS/thesis_layout/actions/workflows/compile-thesis.yml/badge.svg)](https://github.com/RUB-NDS/thesis_layout/actions/workflows/compile-thesis.yml)
 
-Latex template for students writing a bachelor or master thesis.
+Latex template for students writing a bachelor, master or seminar thesis.
 
 ## Quick start
 
 1. Open this repository in VSCode with the *Dev Containers* extension and re-open in container.
    The devcontainer ships with TeX Live, latexmk, the LTeX grammar/spell checker and an inline PDF viewer.
-2. Edit [`settings.tex`](settings.tex): title, author, supervisor, date.
+2. Edit [`settings.tex`](settings.tex): type, title, author, supervisor, date.
 3. Write your chapters in [`chapters/`](chapters/) and your bibliography in [`literature/literature.bib`](literature/literature.bib).
 4. Save any `.tex` file and the container builds the PDF automatically.
 

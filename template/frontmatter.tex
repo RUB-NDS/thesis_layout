@@ -1,7 +1,7 @@
-%% name of the thesis type
-\ifdefstring{\thesistype}{bachelor}{\def\thesisname{Bachelor's Thesis}}{}
-\ifdefstring{\thesistype}{master}{\def\thesisname{Master's Thesis}}{}
-\ifdefstring{\thesistype}{seminar}{\def\thesisname{Seminar Thesis}}{}
+%% name of the thesis type, English and German
+\ifdefstring{\thesistype}{bachelor}{\def\thesisname{Bachelor's Thesis}\def\thesisnamede{Bachelorarbeit}}{}
+\ifdefstring{\thesistype}{master}{\def\thesisname{Master's Thesis}\def\thesisnamede{Masterarbeit}}{}
+\ifdefstring{\thesistype}{seminar}{\def\thesisname{Seminar Thesis}\def\thesisnamede{Seminararbeit}}{}
 
 %% roman page numbers for the front matter
 \pagenumbering{roman}
@@ -54,17 +54,25 @@
 
 \section*{Erklärung}
 {\selectlanguage{ngerman}
-Ich erkläre mich damit einverstanden, dass meine Abschlussarbeit am
-Lehrstuhl Netz- und Datensicherheit dauerhaft in elektronischer und gedruckter Form aufbewahrt
-wird und dass die Ergebnisse aus dieser Arbeit unter Einhaltung guter
-wissenschaftlicher Praxis in der Forschung weiter verwendet werden dürfen.
-Weiterhin erkläre ich mich damit einverstanden, dass die Abschlussarbeit auf der Webseite des Lehrstuhls bzw. des Betreuers veröffentlicht werden darf.\@}
+Ich erkläre mich damit einverstanden, dass meine \thesisnamede{} am Lehrstuhl NDS
+dauerhaft in elektronischer und gedruckter Form aufbewahrt wird und dass die Ergebnisse
+aus dieser Arbeit unter Einhaltung guter wissenschaftlicher Praxis in der Forschung
+weiterverwendet werden dürfen. Der im Rahmen dieser Arbeit entwickelte Source-Code
+darf zudem als Open-Source-Software veröffentlicht und weiterverwendet werden.\@}
 
-\makeatletter
+\section*{Declaration}
+I agree that my \MakeLowercase{\thesisname} may be permanently stored at the NDS chair in both
+electronic and printed form, and that the results of this work may be further used for
+research purposes in compliance with good scientific practice. The source code developed
+as part of this thesis may also be published and reused as open-source software.
+
 \vspace{2cm}
-\rule{3cm}{0.1pt} \hfill \rule{6cm}{0.1pt} \hfill \rule{3cm}{0.1pt}\\
-\hspace*{1cm} \textsc{Date} \hspace*{2.7cm} \textsc{\@author} \hspace*{2.2cm} \textsc{Signature}
-\makeatother
+\begin{center}\small
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+  \hrulefill & \hrulefill\\
+  Ort \& Datum / Place \& Date & Name \& Matrikelnummer / Name \& Matriculation No.
+\end{tabular*}
+\end{center}
 
 \cleardoublepage
 

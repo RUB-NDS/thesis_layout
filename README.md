@@ -21,7 +21,7 @@ Latex template for students writing a bachelor or master thesis.
 | [`chapters/`](chapters/) | One file per chapter, plus `abstract.tex`. |
 | [`glossary/glossary.tex`](glossary/glossary.tex) | Acronyms and glossary entries. |
 | [`literature/literature.bib`](literature/literature.bib) | BibTeX bibliography. |
-| [`forms/declaration.pdf`](forms/declaration.pdf) | Declaration of authorship (form of the Faculty of Computer Science), included as is. Fill it in and sign it after printing. |
+| [`forms/declaration.pdf`](forms/declaration.pdf) | Declaration of authorship (form of the Faculty of Computer Science). Its text fields can be filled in in the built PDF. Sign it after printing. |
 | [`images/`](images/) | Logos and figures. |
 
 ## Building manually

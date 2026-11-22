@@ -33,8 +33,17 @@
 
 \pagestyle{scrplain} % switch off headers and footers
 
-% Official declaration form of the faculty
-\includepdf{forms/declaration.pdf}
+% Official declaration form of the faculty, text fields rebuilt (positions in bp)
+\begin{Form}
+\includepdf[picturecommand={%
+  \setlength{\unitlength}{1bp}%
+  \renewcommand{\DefaultOptionsofText}{print,bordercolor=,backgroundcolor=,charsize=9pt}%
+  \put(57,682){\TextField[name=title,multiline,width=482bp,height=50bp]{}}%
+  \put(57,127){\TextField[name=aitools,multiline,width=482bp,height=152bp,charsize=8pt]{}}%
+  \put(62,78){\TextField[name=date,width=76bp,height=22bp]{}}%
+  \put(169,78){\TextField[name=name,width=175bp,height=22bp]{}}%
+}]{forms/declaration.pdf}
+\end{Form}
 
 \cleardoublepage
 

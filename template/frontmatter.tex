@@ -7,9 +7,8 @@
 \pagenumbering{roman}
 
 %% title page
+\titlehead{\includegraphics[height=2.4cm]{images/fcs_logo.png}\hfill\includegraphics[height=2.4cm]{images/rub_cube.pdf}}
 \publishers{%
-  \vspace{-0.5cm}
-  \begin{center}\includegraphics[height=3.5cm]{images/rub_cube.pdf}\end{center}
   Ruhr University Bochum\\
   Faculty of Computer Science\\
   Chair for Network and Data Security
@@ -21,8 +20,9 @@
     \setlength{\tabcolsep}{.5ex}
     \vspace{1cm}
     \begin{tabular}{@{}rl@{}}
-      Supervisor: & \supervisor\\
-      Advisor: & \advisor\\
+      \ifdefempty{\firstexaminer}{}{First Examiner: & \firstexaminer\\}
+      \ifdefempty{\secondexaminer}{}{Second Examiner: & \secondexaminer\\}
+      \ifdefempty{\advisor}{}{Advisor: & \advisor\\}
       \ifdefempty{\secondadvisor}{}{Second Advisor: & \secondadvisor\\}
     \end{tabular}
   \endgroup
